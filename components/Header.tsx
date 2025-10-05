@@ -1,4 +1,4 @@
-import { createHomeStyles } from "@/assets/images/styles/home.styles"
+import { createHomeStyles } from "@/assets/styles/home.styles"
 import { api } from "@/convex/_generated/api"
 import { useTheme } from "@/hooks/useTheme"
 import { Ionicons } from "@expo/vector-icons"
@@ -29,8 +29,8 @@ const Header = () => {
       </View>
 
       // Progress bar and percentage.
-      {
-        true && (
+      { true &&
+         (
           <View style={homeStyles.progressContainer}>
             <View style={homeStyles.progressBarContainer}>
               <View style={homeStyles.progressBar} >
