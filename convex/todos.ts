@@ -8,7 +8,6 @@ export const getTodos = query({
     }
 })
 
-
 export const addTodos = mutation({
     args: { text: v.string() },
     handler: async (ctx, args) => {
@@ -36,6 +35,13 @@ export const updateTodo = mutation({
     args: { id: v.id("todos"), text: v.string() },
     handler: async (ctx, args) => {
         await ctx.db.patch(args.id, { text: args.text })
+    }
+})
+
+export const deleteTodo = mutation({
+    args: { id: v.id("todos") },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id);
     }
 })
 
