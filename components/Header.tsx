@@ -28,20 +28,18 @@ const Header = () => {
         </View>
       </View>
 
-      // Progress bar and percentage.
-      { true &&
-         (
-          <View style={homeStyles.progressContainer}>
-            <View style={homeStyles.progressBarContainer}>
-              <View style={homeStyles.progressBar} >
-                <LinearGradient colors={colors.gradients.success} style={[homeStyles.progressFill, {width: `${progressPercentage}%`}]} />
-              </View>
-              <Text style={homeStyles.progressText}>{ Math.round(progressPercentage) }%</Text>
+      {/* Progress bar and percentage */}
+      {totalCount > 0 && (
+        <View style={homeStyles.progressContainer}>
+          <View style={homeStyles.progressBarContainer}>
+            <View style={homeStyles.progressBar}>
+              <LinearGradient colors={colors.gradients.success} style={[homeStyles.progressFill, {width: `${progressPercentage}%`}]} />
             </View>
+            <Text style={homeStyles.progressText}>{Math.round(progressPercentage)}%</Text>
           </View>
-  )
-}
-</View>
+        </View>
+      )}
+    </View>
   )
 }
   
